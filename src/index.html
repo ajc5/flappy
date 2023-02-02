@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flappy Bird</title>
+    <style>
+      #game {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #background {
+        width: 5000px;
+        height: 500px;
+        background-image: url("./background.png");
+        background-repeat: repeat;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+#bird {
+  width: 50px;
+  height: 50px;
+  background: url(bird.png) no-repeat;
+  border-radius: 50%;
+  background-size: contain;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  animation: flap 1s linear infinite;
+}
+
+@keyframes flap {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-10deg); }
+  20% { transform: rotate(0deg); }
+  30% { transform: rotate(10deg); }
+  40% { transform: rotate(0deg); }
+}
+
+    </style>
+  </head>
+  <body>
+
+    <div style="position: fixed; z-index: 1; color: grey">
+    <h1>Flappy Bird</h1>
+ChatGPT generated game.<br><br>
+Fly - tap, left mouse click, up/space key<br>
+Dive - down key<br>
+Speed up - right key<br>
+Slow down - left key</div>
+    <div id="game">
+      <div id="background"></div>
+      <div id="bird"></div>
+    </div>
+    <script src="flappybird.js"></script>
+  </body>
+</html>
